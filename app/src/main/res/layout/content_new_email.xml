@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.apps.nacho.uamwebmail.NewEmail"
+    tools:showIn="@layout/activity_new_email">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:minWidth="50sp"
+            android:text="De" />
+
+        <TextView
+            android:id="@+id/new_email_from_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Yo"
+            android:textColor="@android:color/black" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minWidth="50sp"
+            android:text="Para" />
+
+        <AutoCompleteTextView
+            android:id="@+id/new_email_para_autocomplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical" />
+
+        <ImageButton
+            android:id="@+id/new_email_show_cc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_expand_more_24dp"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:id="@+id/new_email_cc_cco_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minWidth="50sp"
+                android:text="Cc" />
+
+            <AutoCompleteTextView
+                android:id="@+id/new_email_cc_autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Copia" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minWidth="50sp"
+                android:text="Cco" />
+
+            <AutoCompleteTextView
+                android:id="@+id/new_email_cco_autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Copia oculta" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/new_email_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:hint="Asunto" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/darker_gray" />
+
+    <EditText
+        android:id="@+id/new_email_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:hint="Escribe tu correo" />
+
+
+</LinearLayout>

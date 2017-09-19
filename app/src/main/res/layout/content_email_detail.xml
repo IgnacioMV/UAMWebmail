@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.apps.nacho.uamwebmail.EmailDetail"
+    tools:showIn="@layout/activity_email_detail">
+
+    <View
+        android:id="@+id/topBlankSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="30sp">
+
+    </View>
+
+    <WebView
+        android:id="@+id/body_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBlankSpace"
+        android:layout_margin="0dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:scrollbars="none">
+
+    </WebView>
+
+    <SlidingDrawer
+        android:id="@+id/slidingDrawer1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:orientation="vertical"
+        android:rotation="180">
+
+
+        <LinearLayout
+            android:id="@+id/handle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EEEEEE"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/sliding_separator_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <Button
+                android:id="@+id/sliding_drawer_button"
+                android:layout_width="60sp"
+                android:layout_height="30sp"
+                android:background="@drawable/ic_expand_less_24dp" />
+
+            <View
+                android:id="@+id/sliding_separator_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:rotation="180">
+
+                    <LinearLayout
+                        android:id="@+id/email_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#EEEEEE"
+                        android:gravity="center"
+                        android:minHeight="100dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/email_detail_subject"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:padding="12dp"
+                                android:text="Asunto"
+                                android:textSize="18sp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/email_detail_folder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#DDDDDD"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="6dp"
+                            android:text="Carpeta" />
+
+                        <ImageButton
+                            android:id="@+id/favorite_button"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="#00ffffff"
+                            android:src="@android:drawable/btn_star" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/email_detail_separator1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <LinearLayout
+                        android:id="@+id/email_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingTop="12dp">
+
+                                <TextView
+                                    android:id="@+id/message_detail_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="FROM"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/message_detail_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="TO" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="12dp"
+                                android:paddingTop="12dp">
+
+                                <ImageButton
+                                    android:layout_width="24sp"
+                                    android:layout_height="24sp"
+                                    android:background="#00ffffff"
+                                    android:src="@drawable/ic_reply_black_24dp" />
+
+                                <ImageButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="#00ffffff"
+                                    android:paddingLeft="12dp"
+                                    android:paddingRight="12dp"
+                                    android:src="@drawable/ic_more_vert_black_24dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/more_details_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="50sp"
+                                    android:layout_height="wrap_content"
+                                    android:text="De:" />
+
+                                <TextView
+                                    android:id="@+id/more_details_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Nombre + email" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="50sp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Para:" />
+
+                                <TextView
+                                    android:id="@+id/more_details_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Nombre + email" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="50sp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Fecha:" />
+
+                                <TextView
+                                    android:id="@+id/more_details_date"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Fecha detallada" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <CheckedTextView
+                            android:id="@+id/showImages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                            android:padding="6dp"
+                            android:text="Mostrar imágenes"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/email_detail_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        tools:targetApi="lollipop" />
+
+                    <LinearLayout
+                        android:id="@+id/email_footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#00ffffff"
+                                android:src="@drawable/ic_reply_black_24dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="12dp"
+                                android:text="Responder" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#00ffffff"
+                                android:src="@drawable/ic_reply_all_black_24dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="12dp"
+                                android:text="Responder a todos" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#00ffffff"
+                                android:src="@drawable/ic_forward_black_24dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="12dp"
+                                android:text="Reenviar" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </SlidingDrawer>
+
+
+</RelativeLayout>
+
